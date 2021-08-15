@@ -86,6 +86,7 @@ public class Quizz implements ActionListener {
         btnA.setForeground(Color.white);
         btnA.setBackground(Color.pink);
         btnA.addActionListener(this);
+        btnA.setText("A");
 
         btnB.setBounds(0, 200, 100, 100);
         btnB.setFont(new Font("MV Boli", Font.BOLD, 30));
@@ -93,6 +94,7 @@ public class Quizz implements ActionListener {
         btnB.setForeground(Color.white);
         btnB.setBackground(Color.pink);
         btnB.addActionListener(this);
+        btnB.setText("B");
 
         btnC.setBounds(0, 300, 100, 100);
         btnC.setFont(new Font("MV Boli", Font.BOLD, 30));
@@ -100,6 +102,7 @@ public class Quizz implements ActionListener {
         btnC.setForeground(Color.white);
         btnC.setBackground(Color.pink);
         btnC.addActionListener(this);
+        btnC.setText("C");
 
         btnD.setBounds(0, 400, 100, 100);
         btnD.setFont(new Font("MV Boli", Font.BOLD, 30));
@@ -107,6 +110,7 @@ public class Quizz implements ActionListener {
         btnD.setForeground(Color.white);
         btnD.setBackground(Color.pink);
         btnD.addActionListener(this);
+        btnD.setText("D");
 
         frame.add(btnA);
         frame.add(btnB);
