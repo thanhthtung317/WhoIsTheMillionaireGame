@@ -108,7 +108,6 @@ public class Quizz implements ActionListener {
         btnD.setBackground(Color.pink);
         btnD.addActionListener(this);
 
-
         frame.add(btnA);
         frame.add(btnB);
         frame.add(btnC);
