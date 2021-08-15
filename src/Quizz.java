@@ -112,6 +112,35 @@ public class Quizz implements ActionListener {
         btnD.addActionListener(this);
         btnD.setText("D");
 
+        answerA.setBounds(125, 100, 500, 100);
+        answerA.setBackground(new Color(0x123456));
+        answerA.setOpaque(true);
+        answerA.setForeground(Color.white);
+        answerA.setFont(new Font("MV Boli", Font.BOLD, 30));
+        answerA.setText("testing");
+
+        answerB.setBounds(125, 200, 500, 100);
+        answerB.setBackground(new Color(0x123456));
+        answerB.setOpaque(true);
+        answerB.setForeground(Color.white);
+        answerB.setFont(new Font("MV Boli", Font.BOLD, 30));
+
+        answerC.setBounds(125, 300, 500, 100);
+        answerC.setBackground(new Color(0x123456));
+        answerC.setOpaque(true);
+        answerC.setForeground(Color.white);
+        answerC.setFont(new Font("MV Boli", Font.BOLD, 30));
+
+        answerD.setBounds(125, 400, 500, 100);
+        answerD.setBackground(new Color(0x123456));
+        answerD.setOpaque(true);
+        answerD.setForeground(Color.white);
+        answerD.setFont(new Font("MV Boli", Font.BOLD, 30));
+
+        frame.add(answerA);
+        frame.add(answerB);
+        frame.add(answerC);
+        frame.add(answerD);
         frame.add(btnA);
         frame.add(btnB);
         frame.add(btnC);
