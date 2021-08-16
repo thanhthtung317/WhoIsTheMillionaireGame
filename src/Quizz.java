@@ -45,6 +45,8 @@ public class Quizz implements ActionListener {
     JTextField numberRight;
     JTextField percentage;
 
+    ImageIcon icon;
+
     Timer timeCounter = new Timer(1000, new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -74,6 +76,7 @@ public class Quizz implements ActionListener {
         secondsLeft = new JLabel();
         numberRight = new JTextField();
         percentage = new JTextField();
+        icon = new ImageIcon("C:\\Users\\ASUS\\OneDrive\\Pictures\\Saved Pictures\\flaticon\\money-bag.png");
 
         textField.setBounds(0,0, 650, 50);
         textField.setBackground(Color.pink);
@@ -196,7 +199,10 @@ public class Quizz implements ActionListener {
         frame.add(btnD);
         frame.add(textArea);
         frame.add(textField);
+
         frame.setDefaultCloseOperation(3);
+        frame.setTitle("Who Is The Millionaire?");
+        frame.setIconImage(icon.getImage());
         frame.setLocationRelativeTo(null);
         frame.setLayout(null);
         frame.setSize(650, 650);
