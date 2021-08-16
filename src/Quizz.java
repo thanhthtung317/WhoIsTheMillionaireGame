@@ -137,6 +137,16 @@ public class Quizz implements ActionListener {
         answerD.setForeground(Color.white);
         answerD.setFont(new Font("MV Boli", Font.BOLD, 30));
 
+        secondsLeft.setBounds(535, 510,100, 100);
+        secondsLeft.setBackground(Color.pink);
+        secondsLeft.setForeground(Color.white);
+        secondsLeft.setFont(new Font("MV Boli", Font.BOLD, 60));
+        secondsLeft.setBorder(BorderFactory.createLineBorder(Color.lightGray, 2));
+        secondsLeft.setOpaque(true);
+        secondsLeft.setHorizontalAlignment(JLabel.CENTER);
+        secondsLeft.setText(String.valueOf(seconds));
+
+        frame.add(secondsLeft);
         frame.add(answerA);
         frame.add(answerB);
         frame.add(answerC);
