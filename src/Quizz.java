@@ -45,6 +45,19 @@ public class Quizz implements ActionListener {
     JTextField numberRight;
     JTextField percentage;
 
+    Timer timeCounter = new Timer(1000, new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            //countdown from 10 to 0
+
+            seconds--;
+            secondsLeft.setText(String.valueOf(seconds));
+            if(seconds <= 0){
+                displayAnswer();
+            }
+        }
+    });
+
     public Quizz(){
         frame = new JFrame();
         textField = new JTextField();
@@ -204,6 +217,7 @@ public class Quizz implements ActionListener {
             answerB.setText(options[index][1]);
             answerC.setText(options[index][2]);
             answerD.setText(options[index][3]);
+            timeCounter.start();
         }
     }
 
@@ -218,7 +232,6 @@ public class Quizz implements ActionListener {
             guessAnswer = 'A';
             if (guessAnswer == answers[index]){
                 correctAnswer++;
-                System.out.println(correctAnswer);
             }
         }
 
@@ -246,6 +259,7 @@ public class Quizz implements ActionListener {
     }
 
     public void displayAnswer(){
+        timeCounter.stop();
         btnA.setEnabled(false);
         btnB.setEnabled(false);
         btnC.setEnabled(false);
