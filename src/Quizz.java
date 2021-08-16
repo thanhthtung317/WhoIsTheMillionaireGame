@@ -171,8 +171,6 @@ public class Quizz implements ActionListener {
         percentage.setHorizontalAlignment(JTextField.CENTER);
         percentage.setEditable(false);
 
-//        frame.add(numberRight);
-//        frame.add(percentage);
         frame.add(timeLabel);
         frame.add(secondsLeft);
         frame.add(answerA);
@@ -217,29 +215,30 @@ public class Quizz implements ActionListener {
         btnD.setEnabled(false);
 
         if (e.getSource() == btnA){
-            correctAnswer = 'A';
-            if (correctAnswer == answers[index]){
+            guessAnswer = 'A';
+            if (guessAnswer == answers[index]){
                 correctAnswer++;
+                System.out.println(correctAnswer);
             }
         }
 
         if (e.getSource() == btnB){
-            correctAnswer = 'B';
-            if (correctAnswer == answers[index]){
+            guessAnswer = 'B';
+            if (guessAnswer == answers[index]){
                 correctAnswer++;
             }
         }
 
         if (e.getSource() == btnC){
-            correctAnswer = 'C';
-            if (correctAnswer == answers[index]){
+            guessAnswer = 'C';
+            if (guessAnswer == answers[index]){
                 correctAnswer++;
             }
         }
 
         if (e.getSource() == btnD){
-            correctAnswer = 'D';
-            if (correctAnswer == answers[index]){
+            guessAnswer = 'D';
+            if (guessAnswer == answers[index]){
                 correctAnswer++;
             }
         }
@@ -274,7 +273,7 @@ public class Quizz implements ActionListener {
                 answerD.setForeground(Color.white);
 
                 //reset the answer
-                correctAnswer = ' ';
+                guessAnswer = ' ';
                 //reset the time counter
                 seconds = 10;
                 secondsLeft.setText(String.valueOf(seconds));
@@ -294,6 +293,20 @@ public class Quizz implements ActionListener {
     }
 
     public void finalResult(){
+        result = (int)((correctAnswer/(double)totalQues)*100);
 
+        textField.setText("RESULT: ");
+
+        textArea.setText("");
+        answerA.setText("");
+        answerB.setText("");
+        answerC.setText("");
+        answerD.setText("");
+
+        numberRight.setText(String.valueOf(correctAnswer) + "/" + totalQues);
+        percentage.setText(result + "%");
+
+        frame.add(percentage);
+        frame.add(numberRight);
     }
 }
