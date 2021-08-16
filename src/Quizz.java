@@ -146,6 +146,16 @@ public class Quizz implements ActionListener {
         secondsLeft.setHorizontalAlignment(JLabel.CENTER);
         secondsLeft.setText(String.valueOf(seconds));
 
+        timeLabel.setBounds(535, 475, 100,25);
+        timeLabel.setBackground(Color.pink);
+        timeLabel.setForeground(Color.white);
+        timeLabel.setFont(new Font("MV Boli", Font.BOLD, 20));
+        timeLabel.setBorder(BorderFactory.createLineBorder(Color.lightGray, 2));
+        timeLabel.setOpaque(true);
+        timeLabel.setHorizontalAlignment(JLabel.CENTER);
+        timeLabel.setText("Timer");
+
+        frame.add(timeLabel);
         frame.add(secondsLeft);
         frame.add(answerA);
         frame.add(answerB);
