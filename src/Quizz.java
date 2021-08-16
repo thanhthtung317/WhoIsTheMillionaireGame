@@ -171,7 +171,7 @@ public class Quizz implements ActionListener {
         frame.setLocationRelativeTo(null);
         frame.setLayout(null);
         frame.setSize(650, 650);
-        frame.getContentPane().setBackground(Color.black);
+        frame.getContentPane().setBackground(new Color(0x123456));
         frame.setVisible(true);
     }
 
