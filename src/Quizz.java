@@ -76,7 +76,7 @@ public class Quizz implements ActionListener {
         textArea.setWrapStyleWord(true);
         textArea.setBackground(Color.pink);
         textArea.setForeground(Color.white);
-        textArea.setFont(new Font("MV Boli", Font.BOLD, 30));
+        textArea.setFont(new Font("MV Boli", Font.BOLD, 25));
         textArea.setBorder(BorderFactory.createBevelBorder(1));
         textArea.setEditable(false);
 
@@ -155,6 +155,24 @@ public class Quizz implements ActionListener {
         timeLabel.setHorizontalAlignment(JLabel.CENTER);
         timeLabel.setText("Timer");
 
+        numberRight.setBounds(225, 225, 200, 100);
+        numberRight.setBackground(Color.pink);
+        numberRight.setForeground(Color.white);
+        numberRight.setFont(new Font("MV Boli", Font.BOLD, 20));
+        numberRight.setBorder(BorderFactory.createLineBorder(Color.lightGray, 2));
+        numberRight.setHorizontalAlignment(JTextField.CENTER);
+        numberRight.setEditable(false);
+
+        percentage.setBounds(225, 325, 200, 100);
+        percentage.setBackground(Color.pink);
+        percentage.setForeground(Color.white);
+        percentage.setFont(new Font("MV Boli", Font.BOLD, 20));
+        percentage.setBorder(BorderFactory.createLineBorder(Color.lightGray, 2));
+        percentage.setHorizontalAlignment(JTextField.CENTER);
+        percentage.setEditable(false);
+
+//        frame.add(numberRight);
+//        frame.add(percentage);
         frame.add(timeLabel);
         frame.add(secondsLeft);
         frame.add(answerA);
@@ -173,19 +191,79 @@ public class Quizz implements ActionListener {
         frame.setSize(650, 650);
         frame.getContentPane().setBackground(new Color(0x123456));
         frame.setVisible(true);
+        frame.setResizable(false);
+
+        nextQuestion();
     }
 
     public void nextQuestion(){
-
+        if (index >= totalQues){
+            finalResult();
+        } else {
+            textField.setText("Question number " + (index + 1));
+            textArea.setText(questions[index]);
+            answerA.setText(options[index][0]);
+            answerB.setText(options[index][1]);
+            answerC.setText(options[index][2]);
+            answerD.setText(options[index][3]);
+        }
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        btnA.setEnabled(false);
+        btnB.setEnabled(false);
+        btnC.setEnabled(false);
+        btnD.setEnabled(false);
 
+        if (e.getSource() == btnA){
+            correctAnswer = 'A';
+            if (correctAnswer == answers[index]){
+                correctAnswer++;
+            }
+        }
+
+        if (e.getSource() == btnB){
+            correctAnswer = 'B';
+            if (correctAnswer == answers[index]){
+                correctAnswer++;
+            }
+        }
+
+        if (e.getSource() == btnC){
+            correctAnswer = 'C';
+            if (correctAnswer == answers[index]){
+                correctAnswer++;
+            }
+        }
+
+        if (e.getSource() == btnD){
+            correctAnswer = 'D';
+            if (correctAnswer == answers[index]){
+                correctAnswer++;
+            }
+        }
+        displayAnswer();
     }
 
     public void displayAnswer(){
+        btnA.setEnabled(false);
+        btnB.setEnabled(false);
+        btnC.setEnabled(false);
+        btnD.setEnabled(false);
 
+        if (answers[index] != 'A'){
+            answerA.setForeground(Color.red);
+        }
+        if (answers[index] != 'B'){
+            answerB.setForeground(Color.red);
+        }
+        if (answers[index] != 'C'){
+            answerC.setForeground(Color.red);
+        }
+        if (answers[index] != 'D'){
+            answerD.setForeground(Color.red);
+        }
     }
 
     public void finalResult(){
