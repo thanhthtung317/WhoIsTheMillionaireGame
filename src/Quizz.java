@@ -264,6 +264,33 @@ public class Quizz implements ActionListener {
         if (answers[index] != 'D'){
             answerD.setForeground(Color.red);
         }
+
+        Timer timer = new Timer(2000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                answerA.setForeground(Color.white);
+                answerB.setForeground(Color.white);
+                answerC.setForeground(Color.white);
+                answerD.setForeground(Color.white);
+
+                //reset the answer
+                correctAnswer = ' ';
+                //reset the time counter
+                seconds = 10;
+                secondsLeft.setText(String.valueOf(seconds));
+
+                btnA.setEnabled(true);
+                btnB.setEnabled(true);
+                btnC.setEnabled(true);
+                btnD.setEnabled(true);
+
+                //in order to go to the next question
+                index++;
+                nextQuestion();
+            }
+        });
+        timer.setRepeats(false);
+        timer.start();
     }
 
     public void finalResult(){
